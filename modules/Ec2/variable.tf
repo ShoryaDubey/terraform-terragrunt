@@ -5,7 +5,13 @@ variable "instance_type" {
 
 variable "env" {
   description = "Type of env"
-  type = string
+  type = map(string)
+
+  default = {
+    "dev" = "t2micro"
+    "stage" = "t3micro"
+    "prod" = "t2micro"
+  }
 }
 
 variable "ami" {
