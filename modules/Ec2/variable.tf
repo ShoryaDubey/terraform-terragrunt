@@ -1,6 +1,12 @@
 variable "instance_type" {
   description = "Type of instance"
-  type = string
+  type = map(string)
+
+  default = {
+    "dev" = "t2.micro"
+    "stage" = "t2.micro"
+    "prod" = "t2.micro"
+  }
 }
 
 variable "env" {
@@ -8,9 +14,9 @@ variable "env" {
   type = map(string)
 
   default = {
-    "dev" = "t2micro"
-    "stage" = "t3micro"
-    "prod" = "t2micro"
+    "dev" = "dev"
+    "stage" = "stage"
+    "prod" = "prod"
   }
 }
 
