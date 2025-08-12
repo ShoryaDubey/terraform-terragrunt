@@ -3,7 +3,7 @@ include {
 }
 
 terraform {
-    source = "../../modules/Ec2"
+    source = "../../module/Ec2"
 }
 
 locals {
@@ -13,4 +13,5 @@ locals {
 inputs =  {
     ami = "ami-020cba7c55df1f615"
     instance_type = local.env_vars.locals.instance_type
+    env = local.env_vars.locals.environment
 }
