@@ -3,7 +3,7 @@ include {
 }
 
 terraform {
-    source = "../../module/Ec2"
+    source = "../../../module/Ec2"
 }
 
 locals {
